@@ -5,7 +5,11 @@
   --text: #ffe9b0;
 }
 
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
 
 html, body {
   margin: 0;
@@ -102,7 +106,33 @@ html, body {
   font-size: 11px;
 }
 
-button { touch-action: none; }
+button {
+  touch-action: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+button:focus,
+button:focus-visible,
+button:active {
+  outline: none;
+}
+
+#dpad .pad:active {
+  background: var(--accent);
+  border-color: var(--text);
+}
+
+#actions .action:active {
+  background: var(--text);
+}
+
+#actions .small:active {
+  background: var(--accent);
+  border-color: var(--text);
+}
 
 @media (min-width: 900px) {
   #controls { display: none; }
