@@ -1,0 +1,10 @@
+{
+  "name": "cave-lantern",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cave Lantern — a Game Boy-style cave descent (static site, no build step).",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Cave Lantern</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-wrap">
+    <div id="screen-frame">
+      <canvas id="screen"></canvas>
+    </div>
+    <div id="controls">
+      <div id="dpad">
+        <button id="btn-up" class="pad" aria-label="Up">▲</button>
+        <button id="btn-left" class="pad" aria-label="Left">◀</button>
+        <button id="btn-right" class="pad" aria-label="Right">▶</button>
+        <button id="btn-down" class="pad" aria-label="Down">▼</button>
+      </div>
+      <div id="actions">
+        <button id="btn-start" class="small" aria-label="Start/Pause">START</button>
+        <button id="btn-b" class="action" aria-label="B">B</button>
+        <button id="btn-a" class="action" aria-label="A">A</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
