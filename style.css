@@ -70,15 +70,48 @@ html, body {
   height: 40px;
   background: var(--shell);
   border: 2px solid #3a2650;
-  color: var(--text);
-  font-size: 16px;
   border-radius: 6px;
+}
+
+#dpad .pad::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
 }
 
 #btn-up { top: 0; left: 40px; }
 #btn-down { top: 80px; left: 40px; }
 #btn-left { top: 40px; left: 0; }
 #btn-right { top: 40px; left: 80px; }
+
+#btn-up::before {
+  transform: translate(-50%, -60%);
+  border-width: 0 7px 10px 7px;
+  border-bottom-color: var(--text);
+}
+
+#btn-down::before {
+  transform: translate(-50%, -40%);
+  border-width: 10px 7px 0 7px;
+  border-top-color: var(--text);
+}
+
+#btn-left::before {
+  transform: translate(-60%, -50%);
+  border-width: 7px 10px 7px 0;
+  border-right-color: var(--text);
+}
+
+#btn-right::before {
+  transform: translate(-40%, -50%);
+  border-width: 7px 0 7px 10px;
+  border-left-color: var(--text);
+}
 
 #actions {
   display: flex;
@@ -111,7 +144,12 @@ button {
   -webkit-appearance: none;
   appearance: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
   outline: none;
+  color: var(--text);
+  font-size: 16px;
 }
 
 button:focus,
@@ -123,6 +161,10 @@ button:active {
 #dpad .pad:active {
   background: var(--accent);
   border-color: var(--text);
+}
+
+#dpad .pad:active::before {
+  filter: brightness(0.2);
 }
 
 #actions .action:active {
