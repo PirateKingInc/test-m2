@@ -4,6 +4,10 @@ A Game Boy-style single-player cave descent. Play it live:
 
 **https://piratekinginc.github.io/test-m2/**
 
+*(If that link 404s: GitHub Pages needs a one-time manual switch —
+see "Deploying" below. A repo admin has to click it once; after that
+every push deploys automatically.)*
+
 ## Concept
 
 You're a miner whose only light source is a lantern that doubles as your
@@ -75,3 +79,22 @@ This runs:
 - `src/audio.js` — synthesized sound effects and music.
 - `src/main.js` — fixed-timestep game loop wiring it all together.
 - `tests/` — the Node test scripts described above.
+- `.github/workflows/deploy-pages.yml` — builds nothing (there's no
+  build step) and publishes the repo root straight to GitHub Pages on
+  every push.
+
+## Deploying
+
+The workflow above deploys automatically on every push — **except**
+GitHub will never let a workflow's own `GITHUB_TOKEN` turn Pages on
+for a repository the very first time (it would need
+`administration:write`, a permission Actions tokens can never hold).
+That one-time switch has to be flipped by hand:
+
+1. Go to the repo's **Settings → Pages**.
+2. Under "Build and deployment", set **Source** to **GitHub Actions**.
+
+That's it — no branch or folder to pick. The next push (or
+re-running the latest "Deploy to GitHub Pages" run from the Actions
+tab) will publish the site at the URL above, and every push after
+that deploys with no further steps.
